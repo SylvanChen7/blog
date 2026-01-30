@@ -43,7 +43,7 @@ async function loadGoogleFonts(
     },
     {
       name: "Noto Sans SC",
-      font: "Noto+Sans+SC:wght@700",
+      font: "Noto+Sans+SC",
       weight: 700,
       style: "normal",
     },
@@ -54,7 +54,7 @@ async function loadGoogleFonts(
     },
     {
       name: "Noto Sans",
-      font: "Noto+Sans:wght@700",
+      font: "Noto+Sans",
       weight: 700,
       style: "normal",
     },
