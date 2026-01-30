@@ -13,9 +13,9 @@
       @apply mb-3 text-foreground font-lora font-bold tracking-wide;
     }
 
-    h3 {
+    /* h3 {
       @apply italic;
-    }
+    } */
 
     p,
     strong,
@@ -23,7 +23,7 @@
     ul,
     figcaption,
     table {
-      @apply text-foreground font-main font-medium tracking-wide;
+      @apply text-foreground font-main tracking-wide;
     }
 
     code {
