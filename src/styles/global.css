@@ -22,6 +22,8 @@ html[data-theme="dark"] {
 
 @theme inline {
   --font-app: var(--font-google-sans-code);
+  --font-main: var(--font-noto-sans), var(--font-noto-sans-sc);
+  --font-lora: var(--font-lora);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);

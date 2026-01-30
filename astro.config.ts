@@ -1,11 +1,3 @@
-/*
- * @Author: Pig IridescentPig@outlook.com
- * @Date: 2026-01-14 07:18:08
- * @LastEditors: Pig IridescentPig@outlook.com
- * @LastEditTime: 2026-01-29 17:55:38
- * @FilePath: /Blog/astro.config.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import { defineConfig, envField, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
@@ -30,6 +22,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    smartypants: false,
     remarkPlugins: [
       remarkMath,
       remarkToc, 
@@ -83,6 +76,30 @@ export default defineConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ["normal", "italic"],
       },
+      {
+        name: "Noto Sans SC",
+        cssVariable: "--font-noto-sans-sc",
+        provider: fontProviders.google(),
+        fallbacks: [],
+        weights: [300, 400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      },
+      {
+        name: "Noto Sans",
+        cssVariable: "--font-noto-sans",
+        provider: fontProviders.google(),
+        fallbacks: [],
+        weights: [300, 400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      },
+      {
+        name: "Lora",
+        cssVariable: "--font-lora",
+        provider: fontProviders.google(),
+        fallbacks: [],
+        weights: [400, 500, 600, 700],
+        styles: ["normal", "italic"],
+      }
     ],
   },
 });

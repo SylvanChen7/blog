@@ -10,7 +10,7 @@
     h3,
     h4,
     th {
-      @apply mb-3 text-foreground;
+      @apply mb-3 text-foreground font-lora font-bold tracking-wide;
     }
 
     h3 {
@@ -22,7 +22,10 @@
     ol,
     ul,
     figcaption,
-    table,
+    table {
+      @apply text-foreground font-main font-medium tracking-wide;
+    }
+
     code {
       @apply text-foreground;
     }
