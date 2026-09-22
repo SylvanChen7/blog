@@ -45,6 +45,13 @@ const rssHref = getRelativeLocaleUrl(
     <meta name="generator" content={Astro.generator} />
 
     <!-- Fonts -->
+    <Font cssVariable="--font-family-song" preload={false} />
+    <Font cssVariable="--font-google-sans" preload={false} />
+    <Font cssVariable="--font-source-serif" preload={false} />
+    <Font cssVariable="--font-source-sans" preload={false} />
+    <Font cssVariable="--font-newsreader" preload={false} />
+    <Font cssVariable="--font-noto-serif-sc" preload={false} />
+
     <Font
       cssVariable="--font-google-sans-code"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}

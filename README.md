@@ -19,6 +19,7 @@ Based on [AstroPaper v6.1.0](https://github.com/satnaing/astro-paper/releases/ta
 - Posts: `src/content/posts/`; About content: `src/content/pages/about.md`. Existing public URLs are preserved.
 - Colors and font tokens: `src/styles/theme.css`; prose styles: `src/styles/typography.css`.
 - Local Charter fonts and Google Noto fonts are configured in `astro.config.ts`.
+- Family Song shards live in `src/assets/familysong/`; `src/utils/family-song.config.ts` reads their manifest and is imported by `astro.config.ts`. Use `font-family-song` to apply the font. See `scripts/README.md` for regeneration and verification.
 - Math uses remark-math and KaTeX. OG images retain the custom Chinese and Latin font loader in `src/utils/loadGoogleFont.ts`; builds require access to Google Fonts.
 
 Run `pnpm run lint`, `pnpm run format:check`, and `pnpm run build` to validate changes.

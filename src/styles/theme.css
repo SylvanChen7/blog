@@ -8,9 +8,15 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --font-app: var(--font-google-sans-code);
-  --font-main: var(--font-noto-sans), var(--font-noto-sans-sc);
+  --font-main: var(--font-noto-sans), var(--font-family-song);
+  --font-family-song: var(--font-family-song);
   --font-lora: var(--font-lora);
   --font-xcharter: var(--font-xcharter);
+  --font-google-sans: var(--font-google-sans);
+  --font-source-serif: var(--font-source-serif);
+  --font-source-sans: var(--font-source-sans);
+  --font-newsreader: var(--font-newsreader);
+  --font-noto-serif-sc: var(--font-noto-serif-sc);
 }
 
 /* Light theme values */

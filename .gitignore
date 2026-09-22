@@ -34,3 +34,11 @@ compose.override.yaml
 
 # Local scratch files
 temp/
+
+# Python font tooling
+__pycache__/
+
+docs/
+
+# Generated Family Song font subsets (restored with fonts:fetch)
+/src/assets/familysong/

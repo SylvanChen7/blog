@@ -20,6 +20,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+import familySong from "./src/utils/family-song.config";
 
 export default defineConfig({
   site: config.site.url,
@@ -64,6 +65,39 @@ export default defineConfig({
   },
   image: { responsiveStyles: true, layout: "constrained" },
   fonts: [
+    familySong,
+    {
+      name: "Google Sans",
+      cssVariable: "--font-google-sans",
+      provider: fontProviders.google(),
+      fallbacks: ["sans-serif"],
+      weights: [400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Source Serif 4",
+      cssVariable: "--font-source-serif",
+      provider: fontProviders.google(),
+      fallbacks: ["serif"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Source Sans 3",
+      cssVariable: "--font-source-sans",
+      provider: fontProviders.google(),
+      fallbacks: ["sans-serif"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Newsreader",
+      cssVariable: "--font-newsreader",
+      provider: fontProviders.google(),
+      fallbacks: ["serif"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
     {
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",
@@ -71,6 +105,14 @@ export default defineConfig({
       fallbacks: ["monospace"],
       weights: [300, 400, 500, 600, 700],
       styles: ["normal", "italic"],
+    },
+    {
+      name: "Noto Serif SC",
+      cssVariable: "--font-noto-serif-sc",
+      provider: fontProviders.google(),
+      fallbacks: ["serif"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal"],
     },
     {
       name: "Noto Sans SC",

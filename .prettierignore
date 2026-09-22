@@ -3,6 +3,7 @@
 
 # Except these files & folders
 !/src
+!/scripts
 !/public
 !/.github
 !tsconfig.json
@@ -14,3 +15,6 @@
 !README.md
 !astro-paper.config.ts
 public/pagefind/
+
+# Generated font assets: preserve CSS and manifest hashes
+src/assets/familysong/
