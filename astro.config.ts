@@ -1,36 +1,53 @@
-import { defineConfig, envField, fontProviders } from "astro/config";
+import {
+  defineConfig,
+  envField,
+  fontProviders,
+  svgoOptimizer,
+} from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import rehypeCallouts from "rehype-callouts";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
-import { SITE } from "./src/config";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import config from "./astro-paper.config";
 
-// https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  site: config.site.url,
   integrations: [
+    mdx(),
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: page =>
+        config.features?.showArchives !== false || !page.endsWith("/archives/"),
     }),
   ],
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   markdown: {
-    smartypants: false,
-    remarkPlugins: [
-      remarkMath,
-      remarkToc, 
-      [remarkCollapse, { test: "Table of contents" }]
-    ],
-    rehypePlugins: [rehypeKatex],
+    processor: unified({
+      smartypants: false,
+      remarkPlugins: [
+        remarkMath,
+        remarkToc,
+        [remarkCollapse, { test: "Table of contents" }],
+      ],
+      rehypePlugins: [rehypeKatex, rehypeCallouts],
+    }),
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
       defaultColor: false,
       wrap: false,
@@ -43,28 +60,9 @@ export default defineConfig({
     },
   },
   vite: {
-    // eslint-disable-next-line
-    // @ts-ignore
-    // This will be fixed in Astro 6 with Vite 7 support
-    // See: https://github.com/withastro/astro/issues/14030
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
-    },
   },
-  image: {
-    responsiveStyles: true,
-    layout: "constrained",
-  },
-  env: {
-    schema: {
-      PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
-        access: "public",
-        context: "client",
-        optional: true,
-      }),
-    },
-  },
+  image: { responsiveStyles: true, layout: "constrained" },
   fonts: [
     {
       name: "Google Sans Code",
@@ -106,26 +104,26 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ['./src/assets/fonts/xcharter-regular.woff2'],
+            src: ["./src/assets/fonts/xcharter-regular.woff2"],
             weight: 400,
-            style: 'normal',
+            style: "normal",
           },
           {
-            src: ['./src/assets/fonts/xcharter-italic.woff2'],
+            src: ["./src/assets/fonts/xcharter-italic.woff2"],
             weight: 400,
-            style: 'italic',
+            style: "italic",
           },
           {
-            src: ['./src/assets/fonts/xcharter-bold.woff2'],
+            src: ["./src/assets/fonts/xcharter-bold.woff2"],
             weight: 700,
-            style: 'normal',
+            style: "normal",
           },
           {
-            src: ['./src/assets/fonts/xcharter-bold-italic.woff2'],
+            src: ["./src/assets/fonts/xcharter-bold-italic.woff2"],
             weight: 700,
-            style: 'italic',
+            style: "italic",
           },
-       ]
+        ],
       },
     },
     {
@@ -136,29 +134,39 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ['./src/assets/fonts/charter_regular.woff2'],
+            src: ["./src/assets/fonts/charter_regular.woff2"],
             weight: 400,
-            style: 'normal',
+            style: "normal",
           },
           {
-            src: ['./src/assets/fonts/charter_italic.woff2'],
+            src: ["./src/assets/fonts/charter_italic.woff2"],
             weight: 400,
-            style: 'italic',
+            style: "italic",
           },
           {
-            src: ['./src/assets/fonts/charter_bold.woff2'],
+            src: ["./src/assets/fonts/charter_bold.woff2"],
             weight: 700,
-            style: 'normal',
+            style: "normal",
           },
           {
-            src: ['./src/assets/fonts/charter_bold_italic.woff2'],
+            src: ["./src/assets/fonts/charter_bold_italic.woff2"],
             weight: 700,
-            style: 'italic',
+            style: "italic",
           },
-       ]
+        ],
       },
-    }
+    },
   ],
+  env: {
+    schema: {
+      PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+    },
+  },
   experimental: {
+    svgOptimizer: svgoOptimizer(),
   },
 });

@@ -1,7 +1,7 @@
 ---
-layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
+
 This blog is still under construction!
 
 <!-- ## Features

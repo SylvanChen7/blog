@@ -10,12 +10,8 @@
     h3,
     h4,
     th {
-      @apply mb-3 text-foreground font-xcharter font-bold tracking-wide;
+      @apply mb-3 font-xcharter font-bold tracking-wide text-foreground;
     }
-
-    /* h3 {
-      @apply italic;
-    } */
 
     p,
     strong,
@@ -23,11 +19,7 @@
     ul,
     figcaption,
     table {
-      @apply text-foreground font-main tracking-wide;
-    }
-
-    code {
-      @apply text-foreground;
+      @apply font-main tracking-wide text-foreground;
     }
 
     a {
@@ -50,6 +42,14 @@
       @apply mx-auto border border-border;
     }
 
+    img[role="button"] {
+      @apply cursor-zoom-in;
+
+      &:focus-visible {
+        @apply outline-2 outline-offset-2 outline-dashed;
+      }
+    }
+
     figcaption {
       @apply opacity-75;
     }
@@ -62,10 +62,6 @@
 
       th {
         @apply py-1.5;
-      }
-
-      code {
-        @apply break-all sm:break-normal;
       }
     }
 
@@ -81,7 +77,7 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
-    details {
+    details:not(.callout) {
       @apply inline-block cursor-pointer text-foreground select-none [&_p]:hidden [&_ul]:my-0!;
     }
 

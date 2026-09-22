@@ -1,3 +1,5 @@
+import type { Font } from "satori";
+
 async function loadGoogleFont(
   font: string,
   text: string,
@@ -29,11 +31,7 @@ async function loadGoogleFont(
   return res.arrayBuffer();
 }
 
-async function loadGoogleFonts(
-  text: string
-): Promise<
-  Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
-> {
+async function loadGoogleFonts(text: string): Promise<Font[]> {
   const fontsConfig = [
     {
       name: "Noto Sans SC",
@@ -47,11 +45,7 @@ async function loadGoogleFonts(
       weight: 700,
       style: "normal",
     },
-    { name: "Noto Sans", 
-      font: "Noto+Sans", 
-      weight: 400, 
-      style: "normal" 
-    },
+    { name: "Noto Sans", font: "Noto+Sans", weight: 400, style: "normal" },
     {
       name: "Noto Sans",
       font: "Noto+Sans",
@@ -68,9 +62,9 @@ async function loadGoogleFonts(
       name: "IBM Plex Mono",
       font: "IBM+Plex+Mono",
       weight: 700,
-      style: "bold",
+      style: "normal",
     },
-  ];
+  ] as const;
 
   const fonts = await Promise.all(
     fontsConfig.map(async ({ name, font, weight, style }) => {
