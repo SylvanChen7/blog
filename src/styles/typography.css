@@ -10,7 +10,7 @@
     h3,
     h4,
     th {
-      @apply mb-3 text-foreground font-lora font-bold tracking-wide;
+      @apply mb-3 text-foreground font-xcharter font-bold tracking-wide;
     }
 
     /* h3 {

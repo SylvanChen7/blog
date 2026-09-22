@@ -65,41 +65,100 @@ export default defineConfig({
       }),
     },
   },
+  fonts: [
+    {
+      name: "Google Sans Code",
+      cssVariable: "--font-google-sans-code",
+      provider: fontProviders.google(),
+      fallbacks: ["monospace"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Noto Sans SC",
+      cssVariable: "--font-noto-sans-sc",
+      provider: fontProviders.google(),
+      fallbacks: [],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Noto Sans",
+      cssVariable: "--font-noto-sans",
+      provider: fontProviders.google(),
+      fallbacks: [],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "Lora",
+      cssVariable: "--font-lora",
+      provider: fontProviders.google(),
+      fallbacks: [],
+      weights: [400, 500, 600, 700],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "XCharter",
+      cssVariable: "--font-xcharter",
+      provider: fontProviders.local(),
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            src: ['./src/assets/fonts/xcharter-regular.woff2'],
+            weight: 400,
+            style: 'normal',
+          },
+          {
+            src: ['./src/assets/fonts/xcharter-italic.woff2'],
+            weight: 400,
+            style: 'italic',
+          },
+          {
+            src: ['./src/assets/fonts/xcharter-bold.woff2'],
+            weight: 700,
+            style: 'normal',
+          },
+          {
+            src: ['./src/assets/fonts/xcharter-bold-italic.woff2'],
+            weight: 700,
+            style: 'italic',
+          },
+       ]
+      },
+    },
+    {
+      name: "Bitstream Charter",
+      cssVariable: "--font-bitstream-charter",
+      provider: fontProviders.local(),
+      fallbacks: [],
+      options: {
+        variants: [
+          {
+            src: ['./src/assets/fonts/charter_regular.woff2'],
+            weight: 400,
+            style: 'normal',
+          },
+          {
+            src: ['./src/assets/fonts/charter_italic.woff2'],
+            weight: 400,
+            style: 'italic',
+          },
+          {
+            src: ['./src/assets/fonts/charter_bold.woff2'],
+            weight: 700,
+            style: 'normal',
+          },
+          {
+            src: ['./src/assets/fonts/charter_bold_italic.woff2'],
+            weight: 700,
+            style: 'italic',
+          },
+       ]
+      },
+    }
+  ],
   experimental: {
-    preserveScriptOrder: true,
-    fonts: [
-      {
-        name: "Google Sans Code",
-        cssVariable: "--font-google-sans-code",
-        provider: fontProviders.google(),
-        fallbacks: ["monospace"],
-        weights: [300, 400, 500, 600, 700],
-        styles: ["normal", "italic"],
-      },
-      {
-        name: "Noto Sans SC",
-        cssVariable: "--font-noto-sans-sc",
-        provider: fontProviders.google(),
-        fallbacks: [],
-        weights: [300, 400, 500, 600, 700],
-        styles: ["normal", "italic"],
-      },
-      {
-        name: "Noto Sans",
-        cssVariable: "--font-noto-sans",
-        provider: fontProviders.google(),
-        fallbacks: [],
-        weights: [300, 400, 500, 600, 700],
-        styles: ["normal", "italic"],
-      },
-      {
-        name: "Lora",
-        cssVariable: "--font-lora",
-        provider: fontProviders.google(),
-        fallbacks: [],
-        weights: [400, 500, 600, 700],
-        styles: ["normal", "italic"],
-      }
-    ],
   },
 });
