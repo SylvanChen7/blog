@@ -14,7 +14,9 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "fonts:split": "node scripts/split-familysong.mjs"
+    "fonts:split": "node scripts/split-familysong.mjs",
+    "fonts:fetch": "node scripts/fetch-familysong.mjs",
+    "fonts:test": "node --test scripts/fetch-familysong.test.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.1",
@@ -50,6 +52,7 @@
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "tar": "7.5.22",
     "typescript": "^6.0.3"
   }
 }
