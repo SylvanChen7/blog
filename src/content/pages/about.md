@@ -1,5 +1,7 @@
 ---
 title: "About"
+description: "Everything about this blog."
+pubDatetime: 2026-01-29T14:54:48.586Z
 ---
 
 This blog is still under construction!

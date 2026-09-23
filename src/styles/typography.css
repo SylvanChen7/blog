@@ -9,8 +9,10 @@
     h2,
     h3,
     h4,
+    h5,
+    h6,
     th {
-      @apply mb-3 font-xcharter font-bold tracking-wide text-foreground;
+      @apply mb-3 font-newsreader font-bold tracking-wide text-foreground;
     }
 
     p,
@@ -20,6 +22,44 @@
     figcaption,
     table {
       @apply font-main tracking-wide text-foreground;
+    }
+
+    /* Obsidian inline title maps to h1; its h1–h5 map to h2–h6. */
+    h1 {
+      color: var(--heading-title);
+    }
+
+    h2 {
+      color: var(--heading-h2);
+    }
+
+    h3 {
+      color: var(--heading-h3);
+    }
+
+    h4 {
+      color: var(--heading-h4);
+    }
+
+    h5 {
+      color: var(--heading-h5);
+    }
+
+    h6 {
+      color: var(--heading-h6);
+    }
+
+    h5,
+    h6 {
+      font-variant-caps: small-caps;
+    }
+
+    strong {
+      color: var(--bold-color);
+    }
+
+    th strong {
+      @apply text-foreground;
     }
 
     a {

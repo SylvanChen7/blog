@@ -21,6 +21,7 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 import familySong from "./src/utils/family-song.config";
+import externalFontStyles from "./src/integrations/external-font-styles.mjs";
 
 export default defineConfig({
   site: config.site.url,
@@ -30,6 +31,7 @@ export default defineConfig({
       filter: page =>
         config.features?.showArchives !== false || !page.endsWith("/archives/"),
     }),
+    externalFontStyles(),
   ],
   i18n: {
     locales: ["en"],
@@ -106,14 +108,14 @@ export default defineConfig({
       weights: [300, 400, 500, 600, 700],
       styles: ["normal", "italic"],
     },
-    {
-      name: "Noto Serif SC",
-      cssVariable: "--font-noto-serif-sc",
-      provider: fontProviders.google(),
-      fallbacks: ["serif"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal"],
-    },
+    // {
+    //   name: "Noto Serif SC",
+    //   cssVariable: "--font-noto-serif-sc",
+    //   provider: fontProviders.google(),
+    //   fallbacks: ["serif"],
+    //   weights: [300, 400, 500, 600, 700],
+    //   styles: ["normal"],
+    // },
     {
       name: "Noto Sans SC",
       cssVariable: "--font-noto-sans-sc",

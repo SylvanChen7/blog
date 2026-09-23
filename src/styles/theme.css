@@ -8,7 +8,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --font-app: var(--font-google-sans-code);
-  --font-main: var(--font-noto-sans), var(--font-family-song);
+  --font-main: var(--font-xcharter), var(--font-family-song);
   --font-family-song: var(--font-family-song);
   --font-lora: var(--font-lora);
   --font-xcharter: var(--font-xcharter);
@@ -29,6 +29,17 @@
   --muted: #e6e6e6;
   --muted-foreground: #6b7280;
   --border: #83cbac;
+  /* Card titles, home section headings, and shared page headings. */
+  --card-title: #12aa9c;
+  --section-title: #282728;
+  --page-title: #f8c387; /* ffd111 ea517f */
+  --heading-title: #e45749;
+  --heading-h2: #51c4d3;
+  --heading-h3: #55bb8a;
+  --heading-h4: #fbb929;
+  --heading-h5: #ef82a0;
+  --heading-h6: #806d9e;
+  --bold-color: #c06f98;
 }
 
 /* Dark theme values */
@@ -39,5 +50,11 @@
   --accent-foreground: #ffffff;
   --muted: #343f60;
   --muted-foreground: #afb9ca;
-  --border: #ad6598;
+  /* --border: #ad6598; */
+  --border: #f7e8aa; /* add5a2 f6cec1 */
+  --card-title: #57c3c2;
+  --section-title: #eaedf3;
+  --page-title: #ffd111; /* ffd111 e16c96 */
+  --heading-title: #e16d76;
+  --bold-color: #c08eaf;
 }

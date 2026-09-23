@@ -77,7 +77,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
             { "border-b border-border": recentPosts.length > 0 },
           ]}
         >
-          <h2 class="text-2xl font-semibold tracking-wide">
+          <h2 class="text-2xl font-semibold tracking-wide text-(--section-title)">
             {t.home.featured}
           </h2>
           <ul>
@@ -92,7 +92,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
     {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
+          <h2 class="text-2xl font-semibold tracking-wide text-(--section-title)">
             {t.home.recentPosts}
           </h2>
           <ul>

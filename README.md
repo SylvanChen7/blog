@@ -20,6 +20,7 @@ Based on [AstroPaper v6.1.0](https://github.com/satnaing/astro-paper/releases/ta
 - Colors and font tokens: `src/styles/theme.css`; prose styles: `src/styles/typography.css`.
 - Local Charter fonts and Google Noto fonts are configured in `astro.config.ts`.
 - Family Song shards live in `src/assets/familysong/`; `src/utils/family-song.config.ts` reads their manifest and is imported by `astro.config.ts`. Use `font-family-song` to apply the font. `pnpm run fonts:fetch` supports local bundles, GitHub Releases, and HTTP(S) archives. See `scripts/README.md` for fetching, regeneration, and verification.
+- Production builds use `src/integrations/external-font-styles.mjs` to move the `<Font>` styles between the `astro-fonts:start/end` comments in `Layout.astro` into a shared, content-hashed CSS file. Keep only `<Font>` components and comments inside these markers. Font rules, fallbacks, variables, and preload links are preserved; other styles are untouched. Development keeps Astro's inline styles, so use `pnpm run build` and `pnpm run preview` to check production font loading. Run `pnpm run fonts:test` to test the extraction and font fetching workflows.
 - Math uses remark-math and KaTeX. OG images retain the custom Chinese and Latin font loader in `src/utils/loadGoogleFont.ts`; builds require access to Google Fonts.
 
 Run `pnpm run lint`, `pnpm run format:check`, and `pnpm run build` to validate changes.
