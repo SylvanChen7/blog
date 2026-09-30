@@ -31,8 +31,8 @@
   --border: #83cbac;
   /* Card titles, home section headings, and shared page headings. */
   --card-title: #12aa9c;
-  --section-title: #282728;
-  --page-title: #f8c387; /* ffd111 ea517f */
+  --section-title: #ed8bac;
+  --page-title: #f8c387; /* ffd111 ea517f f49ac2 ed8bac */
   --heading-title: #e45749;
   --heading-h2: #51c4d3;
   --heading-h3: #55bb8a;
@@ -53,7 +53,7 @@
   /* --border: #ad6598; */
   --border: #f7e8aa; /* add5a2 f6cec1 */
   --card-title: #57c3c2;
-  --section-title: #eaedf3;
+  --section-title: #ed8bac;
   --page-title: #ffd111; /* ffd111 e16c96 */
   --heading-title: #e16d76;
   --bold-color: #c08eaf;
